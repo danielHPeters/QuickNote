@@ -19,11 +19,15 @@ RoutesConfig::set('basePath', '');
 
 RouteSimple::init();
 
-RouteSimple::add('', function (){
-    $content = $content = $content = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam';
+RouteSimple::add('', function () {
+    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar->load();
+    $content = $content = $content = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam';
     $index = new View(dirname(__FILE__).'/../views/', 'page');
     $index->setVar('charset', 'UTF-8');
     $index->setVar('pageTitle', 'QuickNote');
+    $index->setVar('navbar', $navBar->getHtml());
     $index->setVar('title', 'Welcome to QuickNote');
     $index->setVar('content', $content);
     $index->setVar('footer', 'Made by Daniel Peters');
@@ -31,29 +35,36 @@ RouteSimple::add('', function (){
     echo $index->getHtml();
 });
 
-RouteSimple::add('about', function (){
+RouteSimple::add('about', function () {
+    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar->load();
     $content = $content = $content = 'QuickNote is a simple to use, highly efficient notes manager.';
-    $index = new View(dirname(__FILE__).'/../views/', 'page');
-    $index->setVar('charset', 'UTF-8');
-    $index->setVar('pageTitle', 'About');
-    $index->setVar('title', 'About QuickNote');
-    $index->setVar('content', $content);
-    $index->setVar('footer', 'Made by Daniel Peters');
-    $index->load();
-    echo $index->getHtml();
+    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about->setVar('charset', 'UTF-8');
+    $about->setVar('pageTitle', 'About');
+    $about->setVar('navbar', $navBar->getHtml());
+    $about->setVar('title', 'About QuickNote');
+    $about->setVar('content', $content);
+    $about->setVar('footer', 'Made by Daniel Peters');
+    $about->load();
+    echo $about->getHtml();
 });
 
 RouteSimple::add404(function (string $url) {
-    // Send 404 Header
-    header("HTTP/1.0 404 Not Found");
+    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar->load();
     $content = 'Page ' . $url . ' not found';
     $error404 = new View(dirname(__FILE__).'/../views/', 'page');
     $error404->setVar('charset', 'UTF-8');
     $error404->setVar('pageTitle', '404');
+    $error404->setVar('navbar', $navBar->getHtml());
     $error404->setVar('title', 'ERROR 404');
     $error404->setVar('content', $content);
     $error404->setVar('footer', 'Made by Daniel Peters');
     $error404->load();
+
+    // Send 404 Header
+    header("HTTP/1.0 404 Not Found");
     echo $error404->getHtml();
 });
 
