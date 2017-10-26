@@ -22,7 +22,7 @@ RouteSimple::init();
 RouteSimple::add('', function () {
     $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
     $navBar->load();
-    $content = $content = $content = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+    $content = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
     sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam';
     $index = new View(dirname(__FILE__).'/../views/', 'page');
     $index->setVar('charset', 'UTF-8');
@@ -38,12 +38,29 @@ RouteSimple::add('', function () {
 RouteSimple::add('about', function () {
     $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
     $navBar->load();
-    $content = $content = $content = 'QuickNote is a simple to use, highly efficient notes manager.';
+    $content = 'QuickNote is a simple to use, highly efficient notes manager.';
     $about = new View(dirname(__FILE__).'/../views/', 'page');
     $about->setVar('charset', 'UTF-8');
     $about->setVar('pageTitle', 'About');
     $about->setVar('navbar', $navBar->getHtml());
     $about->setVar('title', 'About QuickNote');
+    $about->setVar('content', $content);
+    $about->setVar('footer', 'Made by Daniel Peters');
+    $about->load();
+    echo $about->getHtml();
+});
+
+RouteSimple::add('notes', function () {
+    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar->load();
+    $noteBoard = new View(dirname(__FILE__) . '/../views/partials/', 'note-board');
+    $noteBoard->load();
+    $content = $noteBoard->getHtml();
+    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about->setVar('charset', 'UTF-8');
+    $about->setVar('pageTitle', 'Notes');
+    $about->setVar('navbar', $navBar->getHtml());
+    $about->setVar('title', 'Your Notes');
     $about->setVar('content', $content);
     $about->setVar('footer', 'Made by Daniel Peters');
     $about->load();
