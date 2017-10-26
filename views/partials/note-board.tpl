@@ -1,17 +1,5 @@
 <div id="board">
     <div id="todo">
-        <div id="item1" draggable="true">
-            <div class="cardTitle">
-                Title
-            </div>
-            Lorem ipsum
-        </div>
-        <div id="item2" draggable="true">
-            <div class="cardTitle">
-                Title
-            </div>
-            Lorem ipsum
-        </div>
     </div>
     <div id="inprogress"></div>
     <div id="done"></div>
@@ -19,10 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
   function init() {
-    $('#item1, #item2').bind('dragstart', function (event) {
-      event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'))
-    })
-
+    var notesCount = 0
     var areas = $('#todo, #inprogress, #done')
 
     areas.bind('dragover', function (event) {
@@ -36,10 +21,11 @@
 
     $('#addNote').submit(function (event) {
       event.preventDefault()
+      notesCount++
       var title = $('#noteTitle').val()
       var text = $('#noteText').val()
       var note = document.createElement('div')
-      note.setAttribute('id', 'item3')
+      note.setAttribute('id', 'note' + notesCount)
       note.setAttribute('draggable', 'true')
       var noteTitle = document.createElement('div')
       noteTitle.setAttribute('class', 'cardTitle')
