@@ -35,9 +35,9 @@
         </div>
         <div class="col-md-3">
             <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
-                            <!-- Put e-mail validation error messages here -->
-                        </span>
+                <span class="text-danger align-middle">
+                    <!-- Put e-mail validation error messages here -->
+                </span>
             </div>
         </div>
     </div>
