@@ -67,6 +67,40 @@ RouteSimple::add('notes', function () {
     echo $about->getHtml();
 });
 
+RouteSimple::add('register', function () {
+    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar->load();
+    $noteBoard = new View(dirname(__FILE__) . '/../views/partials/', 'user-register-form');
+    $noteBoard->load();
+    $content = $noteBoard->getHtml();
+    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about->setVar('charset', 'UTF-8');
+    $about->setVar('pageTitle', 'Register');
+    $about->setVar('navbar', $navBar->getHtml());
+    $about->setVar('title', 'Sign Up to QuickNote');
+    $about->setVar('content', $content);
+    $about->setVar('footer', 'Made by Daniel Peters');
+    $about->load();
+    echo $about->getHtml();
+});
+
+RouteSimple::add('login', function () {
+    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar->load();
+    $noteBoard = new View(dirname(__FILE__) . '/../views/partials/', 'login-form');
+    $noteBoard->load();
+    $content = $noteBoard->getHtml();
+    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about->setVar('charset', 'UTF-8');
+    $about->setVar('pageTitle', 'Login');
+    $about->setVar('navbar', $navBar->getHtml());
+    $about->setVar('title', 'Log in to QuickNote');
+    $about->setVar('content', $content);
+    $about->setVar('footer', 'Made by Daniel Peters');
+    $about->load();
+    echo $about->getHtml();
+});
+
 RouteSimple::add404(function (string $url) {
     $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
     $navBar->load();

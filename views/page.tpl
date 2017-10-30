@@ -13,7 +13,7 @@
     {navbar}
     <main class="content">
         <h1>{title}</h1>
-        <p>{content}</p>
+        {content}
     </main>
     <footer>
         <p>{footer}</p>
