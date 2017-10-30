@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS qicknote;
+CREATE DATABASE IF NOT EXISTS quicknote;
 USE quicknote;
 CREATE TABLE IF NOT EXISTS user (
   id        SERIAL,
