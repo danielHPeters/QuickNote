@@ -1,14 +1,14 @@
 <div class="container">
-    <form class="form-horizontal" role="form" method="POST" action="/login">
+    <form class="form-horizontal" role="form" method="POST" action="/user-login">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <div class="form-group has-danger">
-                    <label class="sr-only" for="email">E-Mail Address</label>
+                    <label class="sr-only" for="username">Username</label>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                        <input type="text" name="email" class="form-control" id="email"
-                               placeholder="you@example.com" required autofocus>
+                        <input type="text" name="username" class="form-control" id="username"
+                               placeholder="JohnDoe" required autofocus>
                     </div>
                 </div>
             </div>
@@ -37,18 +37,6 @@
                         <span class="text-danger align-middle">
                         <!-- Put password error message here -->
                         </span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6" style="padding-top: .35rem">
-                <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-                    <label class="form-check-label">
-                        <input class="form-check-input" name="remember"
-                               type="checkbox">
-                        <span style="padding-bottom: .15rem">Remember me</span>
-                    </label>
                 </div>
             </div>
         </div>

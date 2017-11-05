@@ -1,14 +1,56 @@
-<form class="form-horizontal" role="form" method="POST" action="/register">
+<form class="form-horizontal" role="form" method="POST" action="/user-register">
     <div class="row">
         <div class="col-md-3 field-label-responsive">
-            <label for="name">Name</label>
+            <label for="firstName">First Name</label>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                    <input type="text" name="name" class="form-control" id="name"
-                           placeholder="John Doe" required autofocus>
+                    <input type="text" name="firstName" class="form-control" id="firstName"
+                           placeholder="John" required autofocus>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-control-feedback">
+                <span class="text-danger align-middle">
+                    <!-- Put name validation error messages here -->
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <label for="lastName">Last Name</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                    <input type="text" name="lastName" class="form-control" id="lastName"
+                           placeholder="Doe" required autofocus>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-control-feedback">
+                <span class="text-danger align-middle">
+                    <!-- Put name validation error messages here -->
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <label for="username">User Name</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                    <input type="text" name="username" class="form-control" id="username"
+                           placeholder="JohnDoe" required autofocus>
                 </div>
             </div>
         </div>
@@ -64,7 +106,7 @@
     </div>
     <div class="row">
         <div class="col-md-3 field-label-responsive">
-            <label for="password">Confirm Password</label>
+            <label for="password-confirm">Confirm Password</label>
         </div>
         <div class="col-md-6">
             <div class="form-group">
@@ -72,7 +114,7 @@
                     <div class="input-group-addon" style="width: 2.6rem">
                         <i class="fa fa-repeat"></i>
                     </div>
-                    <input type="password" name="password-confirmation" class="form-control"
+                    <input type="password" name="passwordConfirm" class="form-control"
                            id="password-confirm" placeholder="Password" required>
                 </div>
             </div>

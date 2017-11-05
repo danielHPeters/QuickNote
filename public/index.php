@@ -1,7 +1,5 @@
 <?php
 
-namespace rafisa\quicknote;
-
 include '../../lib/AutoLoader.php';
 
 use rafisa\lib\AutoLoader;
@@ -20,11 +18,11 @@ RoutesConfig::set('basePath', '');
 RouteSimple::init();
 
 RouteSimple::add('', function () {
-    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar = new View(dirname(__FILE__) . '/../views/partials/', 'navbar');
     $navBar->load();
     $content = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
     sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam';
-    $index = new View(dirname(__FILE__).'/../views/', 'page');
+    $index = new View(dirname(__FILE__) . '/../views/', 'page');
     $index->setVar('charset', 'UTF-8');
     $index->setVar('pageTitle', 'QuickNote');
     $index->setVar('navbar', $navBar->getHtml());
@@ -36,10 +34,10 @@ RouteSimple::add('', function () {
 });
 
 RouteSimple::add('about', function () {
-    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar = new View(dirname(__FILE__) . '/../views/partials/', 'navbar');
     $navBar->load();
     $content = 'QuickNote is a simple to use, highly efficient notes manager.';
-    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about = new View(dirname(__FILE__) . '/../views/', 'page');
     $about->setVar('charset', 'UTF-8');
     $about->setVar('pageTitle', 'About');
     $about->setVar('navbar', $navBar->getHtml());
@@ -51,12 +49,12 @@ RouteSimple::add('about', function () {
 });
 
 RouteSimple::add('notes', function () {
-    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar = new View(dirname(__FILE__) . '/../views/partials/', 'navbar');
     $navBar->load();
     $noteBoard = new View(dirname(__FILE__) . '/../views/partials/', 'note-board');
     $noteBoard->load();
     $content = $noteBoard->getHtml();
-    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about = new View(dirname(__FILE__) . '/../views/', 'page');
     $about->setVar('charset', 'UTF-8');
     $about->setVar('pageTitle', 'Notes');
     $about->setVar('navbar', $navBar->getHtml());
@@ -68,12 +66,12 @@ RouteSimple::add('notes', function () {
 });
 
 RouteSimple::add('register', function () {
-    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar = new View(dirname(__FILE__) . '/../views/partials/', 'navbar');
     $navBar->load();
     $noteBoard = new View(dirname(__FILE__) . '/../views/partials/', 'user-register-form');
     $noteBoard->load();
     $content = $noteBoard->getHtml();
-    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about = new View(dirname(__FILE__) . '/../views/', 'page');
     $about->setVar('charset', 'UTF-8');
     $about->setVar('pageTitle', 'Register');
     $about->setVar('navbar', $navBar->getHtml());
@@ -85,12 +83,12 @@ RouteSimple::add('register', function () {
 });
 
 RouteSimple::add('login', function () {
-    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar = new View(dirname(__FILE__) . '/../views/partials/', 'navbar');
     $navBar->load();
     $noteBoard = new View(dirname(__FILE__) . '/../views/partials/', 'login-form');
     $noteBoard->load();
     $content = $noteBoard->getHtml();
-    $about = new View(dirname(__FILE__).'/../views/', 'page');
+    $about = new View(dirname(__FILE__) . '/../views/', 'page');
     $about->setVar('charset', 'UTF-8');
     $about->setVar('pageTitle', 'Login');
     $about->setVar('navbar', $navBar->getHtml());
@@ -101,11 +99,27 @@ RouteSimple::add('login', function () {
     echo $about->getHtml();
 });
 
+RouteSimple::add('user-login', function () {
+    include dirname(__FILE__) . '/../services/login.php';
+});
+
+RouteSimple::add('user-register', function () {
+    include dirname(__FILE__) . '/../services/add-user.php';
+});
+
+RouteSimple::add('logout', function () {
+    include dirname(__FILE__) . '/../services/logout.php';
+});
+
+RouteSimple::add('change-password', function () {
+    include dirname(__FILE__) . '/../services/change-password.php';
+});
+
 RouteSimple::add404(function (string $url) {
-    $navBar = new View(dirname(__FILE__).'/../views/partials/', 'navbar');
+    $navBar = new View(dirname(__FILE__) . '/../views/partials/', 'navbar');
     $navBar->load();
     $content = 'Page ' . $url . ' not found';
-    $error404 = new View(dirname(__FILE__).'/../views/', 'page');
+    $error404 = new View(dirname(__FILE__) . '/../views/', 'page');
     $error404->setVar('charset', 'UTF-8');
     $error404->setVar('pageTitle', '404');
     $error404->setVar('navbar', $navBar->getHtml());
