@@ -48,10 +48,11 @@
 <br>
 <br>
 <br>
-<form id="addNote">
+<form id="addNote" class="form-horizontal">
     <div class="form-group">
         <input type="text" id="noteTitle" class="form-control" placeholder="Note Title">
         <textarea id="noteText" class="form-control" placeholder="Enter your text here"></textarea>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
+<div class="clear"></div>

@@ -56,3 +56,11 @@ body {
   background-color: rgb(255, 255, 255);
   border: 2px solid white;
 }
+#addNote {
+  float: right;
+  width: 150px;
+}
+
+.clear {
+  clear: both;
+}
