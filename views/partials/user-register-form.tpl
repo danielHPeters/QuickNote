@@ -8,7 +8,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                     <input type="text" name="firstName" class="form-control" id="firstName"
-                           placeholder="John" required autofocus>
+                           placeholder="Hans" required autofocus>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                     <input type="text" name="lastName" class="form-control" id="lastName"
-                           placeholder="Doe" required autofocus>
+                           placeholder="Muster" required autofocus>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                     <input type="text" name="username" class="form-control" id="username"
-                           placeholder="JohnDoe" required autofocus>
+                           placeholder="HansMuster" required autofocus>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
                     <input type="text" name="email" class="form-control" id="email"
-                           placeholder="you@example.com" required autofocus>
+                           placeholder="hans@muster.ch" required autofocus>
                 </div>
             </div>
         </div>

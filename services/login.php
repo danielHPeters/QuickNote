@@ -9,6 +9,7 @@
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     https://github.com/danielHpeters
  */
+
 use rafisa\lib\filters\InputValidator;
 
 require_once dirname(__FILE__) . '/connection.php';
