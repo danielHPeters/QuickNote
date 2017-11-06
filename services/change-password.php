@@ -16,8 +16,6 @@ require_once dirname(__FILE__) . '/connection.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
-session_start();
-
 $fields = [
     'password' => 'Plese enter current password.',
     'newPassword' => 'Plese enter a new Password.',
@@ -25,7 +23,6 @@ $fields = [
 ];
 
 $msg = InputValidator::checkPostVars($fields);
-$msg['data'] = $_POST;
 if (!$conn) {
     $msg['errors'][] = 'Could not connect to database. Try again later.';
 }
@@ -44,6 +41,7 @@ if (empty($msg['errors'])) {
         $result = $conn->prepare($statement);
         $result->bindParam(':username', $username);
         $username = $_SESSION['username'];
+        $msg['data'] = $username;
         $password = filter_input(INPUT_POST, 'password');
         $result->setFetchMode(PDO::FETCH_OBJ);
         $result->execute();

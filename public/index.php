@@ -99,6 +99,27 @@ RouteSimple::add('login', function () {
     echo $about->getHtml();
 });
 
+RouteSimple::add('password', function () {
+    $navBar = new View(dirname(__FILE__) . '/../views/partials/', 'navbar');
+    $navBar->load();
+    $noteBoard = new View(dirname(__FILE__) . '/../views/partials/', 'change-password-form');
+    $noteBoard->load();
+    $content = $noteBoard->getHtml();
+    $about = new View(dirname(__FILE__) . '/../views/', 'page');
+    $about->setVar('charset', 'UTF-8');
+    $about->setVar('pageTitle', 'Change Password');
+    $about->setVar('navbar', $navBar->getHtml());
+    $about->setVar('title', 'Change your Password');
+    $about->setVar('content', $content);
+    $about->setVar('footer', 'Made by Daniel Peters');
+    $about->load();
+    echo $about->getHtml();
+});
+
+RouteSimple::add('password-change', function () {
+    include dirname(__FILE__) . '/../services/change-password.php';
+});
+
 RouteSimple::add('user-login', function () {
     include dirname(__FILE__) . '/../services/login.php';
 });

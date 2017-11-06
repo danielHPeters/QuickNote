@@ -8,7 +8,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                     <input type="text" name="firstName" class="form-control" id="firstName"
-                           placeholder="Hans" required autofocus>
+                           placeholder="John" required autofocus>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                     <input type="text" name="lastName" class="form-control" id="lastName"
-                           placeholder="Muster" required autofocus>
+                           placeholder="Doe" required autofocus>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                     <input type="text" name="username" class="form-control" id="username"
-                           placeholder="HansMuster" required autofocus>
+                           placeholder="JohnDoe" required autofocus>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
                     <input type="text" name="email" class="form-control" id="email"
-                           placeholder="hans@muster.ch" required autofocus>
+                           placeholder="john@doe.com" required autofocus>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
                         <i class="fa fa-repeat"></i>
                     </div>
                     <input type="password" name="passwordConfirm" class="form-control"
-                           id="password-confirm" placeholder="Password" required>
+                           id="password-confirm" placeholder="Password Confirmation" required>
                 </div>
             </div>
         </div>
