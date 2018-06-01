@@ -1,4 +1,4 @@
-# QuickNote
+# quick-note
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/danielHPeters/QuickNote.svg?columns=all)](http://waffle.io/danielHPeters/QuickNote)
 ## About
 Manage your Notes  
