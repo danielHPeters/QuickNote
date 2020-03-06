@@ -1,0 +1,32 @@
+{
+  "name": "quick-note",
+  "version": "1.0.0",
+  "description": "Notes management tool.",
+  "main": "index.php",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@types/materialize-css": "^1.0.7",
+    "materialize-css": "^1.0.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/danielPeters/quick-note.git"
+  },
+  "keywords": [
+    "Notes"
+  ],
+  "author": "Daniel Peters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/danielPeters/quick-note/issues"
+  },
+  "homepage": "https://gitlab.com/danielPeters/quick-note#readme"
+}

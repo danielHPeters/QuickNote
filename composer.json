@@ -1,0 +1,31 @@
+{
+  "name": "nm/quick-note",
+  "description": "Note management web application.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Peters",
+      "email": "daniel.peters.ch@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "lib\\": "lib/src/",
+      "nm\\": "src/nm/"
+    }
+  },
+  "require": {
+    "php": "^7.4.3",
+    "ext-json": "*",
+    "ext-fileinfo": "*",
+    "ext-pdo": "*",
+    "ext-sockets": "*",
+    "ext-mysqli": "*",
+    "ext-pdo_mysql": "*",
+    "ext-gd": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.3"
+  }
+}
