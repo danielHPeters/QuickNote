@@ -25,5 +25,3 @@ node_modules
 /public/**/*.js
 /public/**/*.map
 /public/**/*.css
-/logs/
-!/logs/.gitkeep
